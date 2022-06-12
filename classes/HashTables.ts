@@ -118,6 +118,11 @@ export class HashTable {
     }
     console.log("Student " + (name + " is not in the hash table"));
   }
+  public reset(){
+    for (let i: number = 0; i < HashTable.arr.length; i++) {
+      HashTable.arr[i].reset();
+    }
+  }
 
   public toString(): string {
     //  Hint: Its intended that you use the built-in tostring()

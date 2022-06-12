@@ -124,6 +124,9 @@ export class LinkedList<T> implements ILinkedList<T> {
   public getHead(): Node<T> | null {
     return this.head;
   }
+  public reset(): void {
+    this.head = null;
+  }
 
   // interface Post {
   //   title: string;
