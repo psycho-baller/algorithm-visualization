@@ -4,22 +4,18 @@ import styles from "../styles/Home.module.css";
 import DarkMode from "../components/DarkMode";
 import {
   Text,
-  Heading,
   Flex,
   Box,
   Spacer,
   Input,
-  Stack,
   Button,
   Grid,
-  Link,
   Wrap,
 } from "@chakra-ui/react";
 import { HashTable } from "../classes/HashTables";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { animations } from "../animations/index";
-import { useRouter } from "next/router";
 
 
 
@@ -34,7 +30,7 @@ const Home: NextPage = () => {
   }
 
   function HandleRenderForm() {
-    console.log(renderForm);
+    // console.log(renderForm);
     if (renderForm === "insert") {
       return <InsertForm />;
     } else if (renderForm === "delete") {
