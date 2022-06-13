@@ -11,22 +11,47 @@ import {
   Button,
   Grid,
   Wrap,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverHeader,
+  PopoverBody,
+  useToast,
 } from "@chakra-ui/react";
 import { HashTable } from "../classes/HashTables";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { animations } from "../animations/index";
 
-
-
 let ht: HashTable = new HashTable();
 const Home: NextPage = () => {
+  const toast = useToast();
   const [renderForm, setRenderForm] = useState("insert");
   const [map, setMap] = useState(ht.toString());
 
   function handleReset() {
+    const updated: boolean = map.join().length !== 55; // 55 is the length of the hash table in string form, if the length is not 55, then the map is not empty hence the map is updated
     ht.reset();
     setMap(ht.toString());
+    if (updated) {
+      toast({
+        description: "HashTable Reset",
+        status: "success",
+        duration: 2000,
+        // isClosable: true,
+        position: "top-right",
+      });
+    } else {
+      toast({
+        description: "HashTable is already empty",
+        status: "error",
+        duration: 2000,
+        // isClosable: true,
+        position: "top-right",
+      });
+    }
   }
 
   function HandleRenderForm() {
@@ -49,8 +74,36 @@ const Home: NextPage = () => {
 
     const handleInsert = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      ht.insert(insertName, parseInt(insertAge, 10));
+      const desc = ht.insert(insertName, parseInt(insertAge, 10));
       setMap(ht.toString());
+      if (desc.includes("modified")) {
+        toast({
+          title: `Student's age was modified`,
+          description: desc,
+          status: "success",
+          duration: 5000,
+          // isClosable: true,
+          position: "top-right",
+        });
+      } else if (desc.includes("inserted")) {
+        toast({
+          title: `Student was inserted`,
+          description: desc,
+          status: "success",
+          duration: 5000,
+          // isClosable: true,
+          position: "top-right",
+        });
+      } else {
+        toast({
+          title: `${insertName} was not inserted`,
+          description: "Something went wrong",
+          status: "error",
+          duration: 5000,
+          // isClosable: true,
+          position: "top-right",
+        });
+      }
     };
     return (
       <motion.div
@@ -108,17 +161,36 @@ const Home: NextPage = () => {
 
     const handleDelete = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      ht.delete(deleteName);
+      const result = ht.delete(deleteName);
       setMap(ht.toString());
+      if (result === false) {
+        toast({
+          description: `${deleteName} was not found in the HashTable`,
+          status: "error",
+          duration: 4000,
+          // isClosable: true,
+          position: "top-right",
+        });
+      } else {
+        toast({
+          description: `${deleteName} was deleted from the HashTable`,
+          status: "success",
+          duration: 4000,
+          // isClosable: true,
+          position: "top-right",
+        });
+      }
     };
     return (
-<motion.div
+      <motion.div
         key={renderForm}
         initial="initial"
         animate="animate"
         exit="exit"
         variants={animations.variants}
-        >        <Text className={styles.description} color="blue.200">
+      >
+        {" "}
+        <Text className={styles.description} color="blue.200">
           Delete a student from the HashTable:
         </Text>
         <form onSubmit={handleDelete}>
@@ -149,7 +221,25 @@ const Home: NextPage = () => {
     const [searchName, setSearchName] = useState("");
     const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      // setMap(ht.toString());
+      const age: number = ht.search(searchName);
+      if (age === -1) {
+        toast({
+          description: "Student not found in the HashTable",
+          status: "error",
+          duration: 4000,
+          // isClosable: true,
+          position: "top-right",
+        });
+      } else {
+        toast({
+          title: "Student found in the HashTable",
+          description: `${searchName}'s age is ${age}`,
+          status: "success",
+          duration: 5000,
+          // isClosable: true,
+          position: "top-right",
+        });
+      }
     };
     return (
       <motion.div
@@ -158,7 +248,7 @@ const Home: NextPage = () => {
         animate="animate"
         exit="exit"
         variants={animations.variants}
-        >
+      >
         <Text className={styles.description} color="green.200">
           Search for a student in the HashTable:
         </Text>
@@ -177,7 +267,11 @@ const Home: NextPage = () => {
           />
           <br />
           <Grid>
-            <Button colorScheme="green" className={`mx-auto mt-4`} type="submit">
+            <Button
+              colorScheme="green"
+              className={`mx-auto mt-4`}
+              type="submit"
+            >
               Submit
             </Button>
           </Grid>
@@ -191,8 +285,26 @@ const Home: NextPage = () => {
     const [incrementName, setIncrementName] = useState("");
     const handleIncrement = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      ht.increment(incrementName);
+      const age: number = ht.increment(incrementName);
       setMap(ht.toString());
+      if (age === -1) {
+        toast({
+          description: "Student not found in the HashTable",
+          status: "error",
+          duration: 4000,
+          // isClosable: true,
+          position: "top-right",
+        });
+      } else {
+        toast({
+          title: "Student found in the HashTable",
+          description: `${incrementName}'s age is now ${age}`,
+          status: "success",
+          duration: 5000,
+          // isClosable: true,
+          position: "top-right",
+        });
+      }
     };
     return (
       <motion.div
@@ -201,7 +313,7 @@ const Home: NextPage = () => {
         animate="animate"
         exit="exit"
         variants={animations.variants}
-        >
+      >
         <Text className={styles.description} color="yellow.200">
           Increment a student&apos;s age in the HashTable:
         </Text>
@@ -220,7 +332,11 @@ const Home: NextPage = () => {
           />
           <br />
           <Grid>
-            <Button colorScheme="yellow" className={`mx-auto mt-4`} type="submit">
+            <Button
+              colorScheme="yellow"
+              className={`mx-auto mt-4`}
+              type="submit"
+            >
               Submit
             </Button>
           </Grid>
@@ -241,22 +357,35 @@ const Home: NextPage = () => {
       </Head>
       <Flex>
         <Box p="4">
-          <DarkMode />
+          <Popover>
+            <PopoverTrigger>
+              <Button>About</Button>
+            </PopoverTrigger>
+            <PopoverContent>
+              <PopoverArrow />
+              <PopoverCloseButton />
+              {/* <PopoverHeader></PopoverHeader> */}
+              <PopoverBody>
+                A simple HashTable implementation to store student&apos;s names
+                and ages
+              </PopoverBody>
+            </PopoverContent>
+          </Popover>
         </Box>
         <Spacer />
-        <Box p="2">
-          <p className={styles.description}>
-            A simple Hash Table implementation in React.
-          </p>
-        </Box>
-        <Spacer />
-        <Box p="2">
+        <Box p="4">
           <DarkMode />
         </Box>
       </Flex>
       <main className={styles.main}>
         {/* <h1 className={styles.title}>HashTable implementation</h1> */}
-        <div className={styles.description}>{map}</div>
+        <div className={styles.description}>
+          {map.map((line, index) => (
+            <Text key={index}>
+              {line.replace(",", " -> ").replace("[]", "[ ]")}
+            </Text>
+          ))}
+        </div>
         <Wrap direction="row" spacing={4} className="grid">
           <Button
             // className={`mx-auto mt-4`}
@@ -293,6 +422,7 @@ const Home: NextPage = () => {
         </Wrap>
         <AnimatePresence>
           exitBeforeEnter={true}
+          initial={false}
           {HandleRenderForm()}
         </AnimatePresence>
       </main>

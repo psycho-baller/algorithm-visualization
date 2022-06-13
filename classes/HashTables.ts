@@ -22,7 +22,7 @@ export class HashTable {
     return sum % HashTable.LEN;
   }
 
-  public search(name: string): boolean {
+  public search(name: string): number {
     let index: number = this.hashValue(name);
     const list: LinkedList<Student> = HashTable.arr[
       index
@@ -32,14 +32,14 @@ export class HashTable {
       const s = head.data as Student;
 
       if (s.getName().toLowerCase() === name.toLowerCase()) {
-        return true;
+        return s.getAge();
       }
       head = head.next;
     }
-    return false;
+    return -1;
   }
 
-  public insert(name: string, age: number) {
+  public insert(name: string, age: number): string {
     //  Remember that if a student of this name already exists in the table,
     //  you should modify that student's age. Otherwise, add a Student with
     //  appropriate name and age to the end of the appropriate linked list
@@ -52,18 +52,16 @@ export class HashTable {
 
       if (s.getName().toLowerCase() === name.toLowerCase()) {
         s.setAge(age);
-        console.log("Student " + (name + (" is being modified to age " + age)));
-        return;
+        return (name + (" was modified to age " + age));
       }
       head = head.next;
     }
 
     list.insertInBegin(new Student(name, age));
-    console.log("Student " + (name + (" is being inserted with age " + age)));
-    return;
+    return (name + (" was inserted with age " + age));
   }
 
-  public delete(name: string) {
+  public delete(name: string): boolean {
     //  Remember that if the hash table has no students of this name,
     //  then you should print a message indicating this.
     let index: number = this.hashValue(name);
@@ -74,12 +72,11 @@ export class HashTable {
 
       if (s.getName().toLowerCase() === name.toLowerCase()) {
         list.remove(s);
-        console.log("Student " + (name + " is being deleted"));
-        return;
+        return true;
       }
       head = head.next;
     }
-    console.log("Student " + (name + " is not in the hash table"));
+    return false;
   }
 
   public getAge(name: string): number {
@@ -96,11 +93,10 @@ export class HashTable {
       }
       head = head.next;
     }
-    console.log("Student " + (name + " is not in the hash table"));
     return -1;
   }
 
-  public increment(name: string) {
+  public increment(name: string): number {
     //  Remember that if the hash table has no students of this name,
     //  then a message should be printed indicating this
     let index: number = this.hashValue(name);
@@ -111,12 +107,11 @@ export class HashTable {
 
       if (s.getName().toLowerCase() === name.toLowerCase()) {
         s.setAge(s.getAge() + 1);
-        console.log("Student " + (name + " is being incremented by 1"));
-        return;
+        return s.getAge();
       }
       head = head.next;
     }
-    console.log("Student " + (name + " is not in the hash table"));
+    return -1;
   }
   public reset(){
     for (let i: number = 0; i < HashTable.arr.length; i++) {
@@ -124,14 +119,26 @@ export class HashTable {
     }
   }
 
-  public toString(): string {
+  // public getLinkedList(): LinkedList<Student> {
+  //   const lists= [] as Node<Student>[];
+  //   for (let i: number = 0; i < HashTable.arr.length; i++) {
+  //     return lists.push(HashTable.arr[i].getHead());
+  //   }
+  //   return lists;
+  // }
+
+  public getNthList(n: number) {
+    return HashTable.arr[n].toString();
+  }
+
+  public toString(): string[] {
     //  Hint: Its intended that you use the built-in tostring()
     //  for LinkedList, which will implicitly call the tostring()
     //  for Student, which has already been implemented.
     let sb: string[] = [];
     for (let i: number = 0; i < HashTable.arr.length; i++) {
-      sb.push(i + (": [" + (HashTable.arr[i].toString() + "]\n")));
+      sb.push(i + (": [" + (HashTable.arr[i].toString() + "]"+"\n")));
     }
-    return sb.join("").toString();
+    return sb;
   }
 }
