@@ -111,7 +111,7 @@ const Home: NextPage = () => {
         initial="initial"
         animate="animate"
         exit="exit"
-        variants={animations.variants}
+        variants={animations.insert}
       >
         <Text className={styles.description} color="red.200">
           Insert a new key-value pair into the HashTable:
@@ -187,7 +187,7 @@ const Home: NextPage = () => {
         initial="initial"
         animate="animate"
         exit="exit"
-        variants={animations.variants}
+        variants={animations.delete}
       >
         {" "}
         <Text className={styles.description} color="blue.200">
@@ -247,7 +247,7 @@ const Home: NextPage = () => {
         initial="initial"
         animate="animate"
         exit="exit"
-        variants={animations.variants}
+        variants={animations.search}
       >
         <Text className={styles.description} color="green.200">
           Search for a student in the HashTable:
@@ -312,7 +312,7 @@ const Home: NextPage = () => {
         initial="initial"
         animate="animate"
         exit="exit"
-        variants={animations.variants}
+        variants={animations.increment}
       >
         <Text className={styles.description} color="yellow.200">
           Increment a student&apos;s age in the HashTable:
