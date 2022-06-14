@@ -33,11 +33,17 @@ Please [connect with me](#connect-with-me) if you have any good ideas to improve
 
 # Technologies used
 
-- **[NextJs](https://nextjs.org/)** to create a full-stack ReactJs Application. (2nd project using it)
-- **[Chakra-ui](https://chakra-ui.com/)** to use fast accessible react components to make me focus my time on the more complex features. (1st project using it)
-- **[Framer Motion](https://www.framer.com/motion/)** to make cool animations in ReactJs (2nd project using it)
-- **[TailwindCSS](https://tailwindcss.com/)** to style the application with CSS in an extremely fast way.(1st project using it, and now I see why web developers love it)
-- **[TypeScript](https://www.typescript.org/)** to write the code in a way that is more readable and easy to maintain. (2nd project using it)
+- **[NextJs](https://nextjs.org/)** to create a full-stack [ReactJs](https://reactjs.org/) Application.
+    - 2nd project using it
+- **[Chakra-ui](https://chakra-ui.com/)** to use fast accessible react components to make me focus my time on the more complex features.
+    - 1st project using it
+- **[Framer Motion](https://www.framer.com/motion/)** to make cool animations in ReactJs
+    - 2nd project using it
+- **[TailwindCSS](https://tailwindcss.com/)** to style the application with CSS in an extremely fast way.
+    - 1st project using it
+    - Now I see why web developers love it lol.
+- **[TypeScript](https://www.typescript.org/)** to write the code in a way that is more readable and easy to maintain.
+    - 2nd project using it
 
 
 # connect with me
