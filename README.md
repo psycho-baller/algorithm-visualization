@@ -40,7 +40,7 @@ Please [connect with me](#connect-with-me) if you have any good ideas to improve
 - **[Framer Motion](https://www.framer.com/motion/)** to make cool animations in ReactJs
     - 2nd project using it
 - **[TailwindCSS](https://tailwindcss.com/)** to style the application with CSS in an extremely fast way.
-    - 1st project using it
+    - 1st project using it and definitely the not the last.
     - Now I see why web developers love it lol.
 - **[TypeScript](https://www.typescript.org/)** to write the code in a way that is more readable and easy to maintain.
     - 2nd project using it
