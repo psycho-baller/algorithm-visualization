@@ -39,24 +39,43 @@ function getMedian(root) {
 ## Pseudocode
 
 function getMedian(root)
+
     initialRootSize = root.size()
+
     removedFromRight = 0
+
     removedFromLeft = 0
+
     depth = root.depth()
+    
     for i = 0 to depth
+    
         rightNode = root.right
+    
         leftNode = root.left
+    
         rightSize = rightNode.size(), 0 if rightNode is null
+    
         leftSize = leftNode.size(), 0 if leftNode is null
+    
         if removedFromRight + rightSize > (initialRootSize - 1) / 2
+    
             root = rightNode
+    
             removedFromLeft = removedFromLeft + (1 + leftSize)
+    
         else if removedFromLeft + leftSize >(initialRootSize - 1) / 2
+    
             root = leftNode
+    
             removedFromRight = removedFromRight + (1 + rightSize)
+    
         else
+    
             median = root.value
+    
             return median
+
     end
 
 ## Proof of Correctness
