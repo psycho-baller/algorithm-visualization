@@ -100,16 +100,18 @@ function getMedian(root) {
     leftSize = size(leftNode) || 0;
 
     if (removedFromRight + rightSize > (initialRootSize - 1) / 2) {
-      removedFromLeft = removedFromLeft + (1 + leftSize);
-      root = rightNode;
+      // if the sum of the size of right side of the node and the number of removed nodes from the right side is greater than the left side's sum:
+      root = rightNode; // set the root to the right side of the node
+      removedFromLeft = removedFromLeft + (1 + leftSize); // add the number of nodes in the left side of the node to the number of removed nodes from the left side
     } else if (removedFromLeft + leftSize > (initialRootSize - 1) / 2) {
-      removedFromRight = removedFromRight + (1 + rightSize);
-      root = leftNode;
-    } else {
+      // if the sum of the size of left side of the node and the number of removed nodes from the left side is greater than the right side's sum:
+      root = leftNode; // set the root to the left side of the node
+      removedFromRight = removedFromRight + (1 + rightSize); // add the number of nodes in the right side of the node to the number of removed nodes from the right side
+    } else { // if the sum of the size of left side of the node and the number of removed nodes from the left side is equal to the right side's sum:
       // removedFromRight + rightSize == (initialRootSize - 1) / 2 &&
       // removedFromLeft + leftSize == (initialRootSize - 1) / 2;
-      median = root.data;
-      return median;
+      median = root.data; // set the median to the root's data
+      return median; // return the median
     }
   }
 }
