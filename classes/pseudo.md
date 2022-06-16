@@ -1,15 +1,15 @@
 code:
 ```javascript
 function getMedian(root) {
-  const initialRootSize = size(root);
+  const initialRootSize = root.size();
   var removedFromRight = 0;
   var removedFromLeft = 0;
-  const depth = getDepth(root); //root.depth();
+  const depth = root.depth();
   var median;
   var rightNode, leftNode;
   var rightSize, leftSize;
   var i;
-  for (i = 0; i < depth; i++) { // loop through each level
+  for (i = 0; i < depth; i++) { // loop through each depth level of the tree until the median is found
     rightNode = root.right;
     leftNode = root.left;
     // console.log(rightNode, leftNode);
@@ -38,11 +38,7 @@ function getMedian(root)
     initialRootSize = root.size()
     removedFromRight = 0
     removedFromLeft = 0
-    depth = getDepth(root)
-    median
-    rightNode, leftNode
-    rightSize, leftSize
-    i
+    depth = root.depth()
     for i = 0 to depth
         rightNode = root.right
         leftNode = root.left
