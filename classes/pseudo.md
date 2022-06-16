@@ -1,4 +1,6 @@
-code:
+# Get Median from a BST in O(d) time
+## Code
+
 ```javascript
 function getMedian(root) {
   const initialRootSize = root.size();
@@ -33,7 +35,9 @@ function getMedian(root) {
   }
 }
 ```
-pseudocode:
+
+## Pseudocode
+
 function getMedian(root)
     initialRootSize = root.size()
     removedFromRight = 0
@@ -54,3 +58,7 @@ function getMedian(root)
             median = root.value
             return median
     end
+
+## Proof of Correctness
+
+## Runtime Analysis
