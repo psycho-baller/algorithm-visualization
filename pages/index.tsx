@@ -390,6 +390,15 @@ const Home: NextPage = () => {
                 >
                   here
                 </a>{" "}
+                and the hashTable implementation in java (Assignment submission){" "}
+                <a
+                  className={`text-lime-300 hover:text-orange-300`}
+                  href="https://github.com/psycho-baller/storing-in-hashTables"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  here
+                </a>{" "}
                 (currently, the project is private until the end of the course)
               </PopoverBody>
             </PopoverContent>
