@@ -367,7 +367,30 @@ const Home: NextPage = () => {
               {/* <PopoverHeader></PopoverHeader> */}
               <PopoverBody>
                 A simple HashTable implementation to store student&apos;s names
-                and ages
+                and ages. <br />
+                <hr />
+                This web app was made to visualize my solutions for my third
+                Assignment in the Data Structures and Algorithms course in
+                University of Calgary (CPSC 331) You can find the source code
+                for this website{" "}
+                <a
+                  className={`text-lime-300 hover:text-orange-300`}
+                  href="https://github.com/psycho-baller/algorithm-visualization"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  here
+                </a>{" "}
+                and the hashTable implementation{" "}
+                <a
+                  className={`text-lime-300 hover:text-orange-300`}
+                  href="https://github.com/psycho-baller/algorithm-visualization/blob/main/classes/HashTables.ts"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  here
+                </a>{" "}
+                (currently, the project is private until the end of the course)
               </PopoverBody>
             </PopoverContent>
           </Popover>

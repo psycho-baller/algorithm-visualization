@@ -1,4 +1,5 @@
 # Get Median from a BST in O(d) time
+
 ## Code
 
 ```javascript
@@ -52,7 +53,7 @@ function getMedian(root)
         if removedFromRight + rightSize > (initialRootSize - 1) / 2
             root = rightNode
             removedFromLeft = removedFromLeft + (1 + leftSize)
-        else if removedFromLeft + leftSize >(initialRootSize - 1) / 2
+        else if removedFromLeft + leftSize > (initialRootSize - 1) / 2
             root = leftNode
             removedFromRight = removedFromRight + (1 + rightSize)
         else
