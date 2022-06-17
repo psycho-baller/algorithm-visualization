@@ -4,7 +4,7 @@ export const animations = {
     initial: {
       opacity: 0,
       y: -10,
-      x: -10,
+      x: -3,
       transition: {
         duration: 0.5,
         ease: "easeInOut",
@@ -22,7 +22,7 @@ export const animations = {
     exit: {
       opacity: 0,
       y: -10,
-      x: -10,
+      x: -3,
       transition: {
         duration: 0.5,
         ease: "easeInOut",
@@ -33,7 +33,7 @@ export const animations = {
     initial: {
       opacity: 0,
       y: -10,
-      x: -5,
+      x: -1.5,
       transition: {
         duration: 0.5,
         ease: "easeInOut",
@@ -51,7 +51,7 @@ export const animations = {
     exit: {
       opacity: 0,
       y: -10,
-      x: -5,
+      x: -1.5,
       transition: {
         duration: 0.5,
         ease: "easeInOut",
@@ -91,7 +91,7 @@ export const animations = {
     initial: {
       opacity: 0,
       y: -10,
-      x: 5,
+      x: 1.5,
       transition: {
         duration: 0.5,
         ease: "easeInOut",
@@ -109,7 +109,7 @@ export const animations = {
     exit: {
       opacity: 0,
       y: -10,
-      x: 5,
+      x: 1.5,
       transition: {
         duration: 0.5,
         ease: "easeInOut",
