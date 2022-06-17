@@ -115,6 +115,7 @@ PS: Through inspection of the code, you can see that the algorithm's for loop ba
 **Base Case**: If root is null (d == 0),  then the execution of the algorithm ends after the execution of the if statement before the for loop with an Error being thrown, as required to establish the claim.
 
 **Inductive Step**: let l be an integer such that l >= 0. It is necessary and sufficient to use the following Inductive Hypothesis to prove the following Inductive Claim:
+
   - **Inductive Hypothesis**: If the binary search tree satisfies the Binary Search Tree Dictionary Invariant and the preconditions are satisfied when the getMedian method is called with a node 'r' in this binary search tree, such that the depth of the subtree with root 'r' is at most l (0 <= d <= l)
   - then the execution of the for loop of the getMedian method eventually ends which ends the method itself. Furthermore, if either r is null, or not null but it doesn't satisfy the preconditions(Ex: r.size is even), or the node is null, then an Error is thrown, otherwise the median is returned as output.
 
@@ -124,6 +125,7 @@ PS: Through inspection of the code, you can see that the algorithm's for loop ba
 With that in mind, suppose the binary search tree satisfies the Binary Search Tree Dictionary Invariant and the preconditions are satisfied when the getMedian method is called with a node 'r' in this binary search tree, such that the depth of the subtree with root 'r' is l + 1. Since l >= 0, and l = l + 1 >= 0 + 1 Therefore, l >= 1. Then the root 'r' cannot be null.
 
 Let the following be the execution of the getMedian method with the root 'r' as a parameter, We have 3 possible cases when one iteration of the for loop is executed:
+
  1. The sum of the size of right side of the node and the number of removed nodes from the right side is greater than the left side's sum (then the median is in the right side of the node):
   a. It follows by the Binary Search Tree Dictionary Invariant and my expertise in making algorithms, that if the subtree with root r has a value of k, then we know the median is located somewhere in the right subtree of the tree with root r.
   b. Let 'right' be the right child of r which is either null or a non-empty subtree.
