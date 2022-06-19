@@ -398,8 +398,7 @@ const Home: NextPage = () => {
                   rel="noopener noreferrer"
                 >
                   here
-                </a>{" "}
-                (currently, the project is private until the end of the course)
+                </a>
               </PopoverBody>
             </PopoverContent>
           </Popover>

@@ -135,14 +135,14 @@ Let the following be the execution of the getMedian method with the root 'r' as 
   c. Now the subtree with root 'right' has a depth  at most l and it follows, by the Inductive Hypothesis, that an execution of the for loop with the root 'right' will eventually end. Furthermore, either right is null, or not null but it doesn't satisfy the preconditions(Ex: right.size is even), or the node is null, then an Error is thrown, otherwise the median is returned as output.
 
   d. Since the  execution of the for loop with the root 'right' eventually ends, and (in the next iteration of the loop) either a median is returned or a new subtree takes on the role of the root, we can conclude that the execution of the for loop with the root 'r' eventually ends. which ends the method itself. This establishes the Inductive Claim.
-<hr/>
-Case 2. The sum of the size of left side of the node and the number of removed nodes from the left side is greater than the right side's sum (then the median is located somewhere in the left subtree of the tree with root r):
+  <hr/>
+  Case 2. The sum of the size of left side of the node and the number of removed nodes from the left side is greater than the right side's sum (then the median is located somewhere in the left subtree of the tree with root r):
 
   a. This case is almost the same as the previous case, where we have to use the Binary Search Tree Dictionary Invariant and my expertise in making algorithms to prove the claim, if the subtree with root r has a value of k, then we know the median is located somewhere in the left subtree of the tree with root r.
 
   b. Since the execution of the for loop with the root 'left' eventually ends, and (in the next iteration of the loop) either a median is returned or a new subtree takes on the role of the root, we can conclude that the execution of the for loop with the root 'r' eventually ends. which ends the method itself. This establishes the Inductive Claim too.
-<hr/>
-Case 3. The sum of the size of left side of the node and the number of removed nodes from the left side is equal to the right side's sum:
+  <hr/>
+  Case 3. The sum of the size of left side of the node and the number of removed nodes from the left side is equal to the right side's sum:
 
   a. In this case the median is the root's data and we can see that the root's data is returned, the loop and getMedian method are terminated. Which ends the method itself. Which establishes the Inductive Claim.
 
