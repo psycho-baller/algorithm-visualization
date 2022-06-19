@@ -369,9 +369,9 @@ const Home: NextPage = () => {
                 A simple HashTable implementation to store student&apos;s names
                 and ages. <br />
                 <hr />
-                This web app was made to visualize my solutions for my third
+                This web app was made to visualize my solutions for the third
                 Assignment in the Data Structures and Algorithms course in
-                University of Calgary (CPSC 331) You can find the source code
+                University of Calgary (CPSC 331) You can find the github repository
                 for this website{" "}
                 <a
                   className={`text-lime-300 hover:text-orange-300`}
