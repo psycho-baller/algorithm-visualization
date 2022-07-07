@@ -24,7 +24,7 @@ export default function MySlider() {
   function handleLenChange(value: number) {
     setSliderValue(value);
     const ht = new HashTable(value)
-    setMap(ht.toString());
+    // setMap(ht.toString());
 
   }
   
