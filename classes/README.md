@@ -165,7 +165,7 @@ For the getMedian algorithm, we are trying to prove that the algorithm's time co
 - At this point the loop will terminate since it would not satisfy the first 2 if statements, so the else is executed (which is when:
 - removedFromRight + rightSize == (initialRootSize - 1) / 2
 - removedFromLeft + leftSize == (initialRootSize - 1) / 2
- ) 
+ )
  and the algorithm will return the leaf node's value which is the median.
 
 So, since the algorithm either gets one step closer to the leaf node or returns the median, the algorithm will terminate, and in the worst case, it will take Xd + Y steps to terminate

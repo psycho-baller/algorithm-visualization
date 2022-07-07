@@ -1,4 +1,3 @@
-
 export const animations = {
   insert: {
     initial: {

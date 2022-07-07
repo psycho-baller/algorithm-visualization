@@ -4,12 +4,19 @@ export class HashTable {
   public static LEN: number = 8;
   public static arr: LinkedList<Student>[];
 
-  public constructor() {
+  public constructor(editedLength: number) {
+    HashTable.LEN = editedLength;
     HashTable.arr = new Array(HashTable.LEN);
     for (let i: number = 0; i < HashTable.LEN; i++) {
       HashTable.arr[i] = new LinkedList<Student>();
     }
   }
+  // public constructor() {
+  //   HashTable.arr = new Array(HashTable.LEN);
+  //   for (let i: number = 0; i < HashTable.LEN; i++) {
+  //     HashTable.arr[i] = new LinkedList<Student>();
+  //   }
+  // }
 
   public hashValue(s: string): number {
     //  Your implementation of the hash function goes here.
@@ -52,13 +59,13 @@ export class HashTable {
 
       if (s.getName().toLowerCase() === name.toLowerCase()) {
         s.setAge(age);
-        return (name + (" was modified to age " + age));
+        return name + (" was modified to age " + age);
       }
       head = head.next;
     }
 
     list.insertInBegin(new Student(name, age));
-    return (name + (" was inserted with age " + age));
+    return name + (" was inserted with age " + age);
   }
 
   public delete(name: string): boolean {
@@ -113,7 +120,7 @@ export class HashTable {
     }
     return -1;
   }
-  public reset(){
+  public reset() {
     for (let i: number = 0; i < HashTable.arr.length; i++) {
       HashTable.arr[i].reset();
     }
@@ -137,7 +144,7 @@ export class HashTable {
     //  for Student, which has already been implemented.
     let sb: string[] = [];
     for (let i: number = 0; i < HashTable.arr.length; i++) {
-      sb.push(i + (": [" + (HashTable.arr[i].toString() + "]"+"\n")));
+      sb.push(i + (": [" + (HashTable.arr[i].toString() + "]" + "\n")));
     }
     return sb;
   }
