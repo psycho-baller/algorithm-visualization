@@ -14,21 +14,24 @@ import {
   PopoverContent,
   PopoverHeader,
 } from "@chakra-ui/react";
+import { HashTable } from "../classes/HashTables";
+
 
 import {   SettingsIcon } from '@chakra-ui/icons';
 
-import { SetStateAction, useState } from "react";
-import { HashTable } from "../classes/HashTables";
+import { useState } from "react";
 
-export default function MySlider() {
+//@ts-ignore
+export default function MySlider({setMap, tableLen, setTableLen, ht}) {
+    // let ht = new HashTable(8) as HashTable;
+
   function handleLenChange(value: number) {
-    setSliderValue(value);
-    const ht = new HashTable(value)
-    // setMap(ht.toString());
-
+    setTableLen(value);
+    // setHt(new HashTable(tableLen));
+    ht = new HashTable(value);
+    setMap(ht.toString());
   }
-  
-  const [sliderValue, setSliderValue] = useState(50);
+
 
   const labelStyles = {
     mt: "2",
@@ -50,9 +53,12 @@ export default function MySlider() {
             <Slider
               aria-label="slider-ex-6"
               onChange={(val: number) => handleLenChange(val)}
+              defaultValue={8}
+              min={1}
+              max={10}
             >
               <SliderMark
-                value={sliderValue}
+                value={tableLen}
                 textAlign="center"
                 bg="blue.500"
                 color="white"
@@ -60,7 +66,7 @@ export default function MySlider() {
                 ml="-5"
                 w="12"
               >
-                {sliderValue}
+                {tableLen}
               </SliderMark>
               <SliderTrack>
                 <SliderFilledTrack />

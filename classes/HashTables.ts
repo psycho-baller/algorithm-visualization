@@ -1,7 +1,7 @@
 import { LinkedList } from "./LinkedList";
 import { Student } from "./Student";
 export class HashTable {
-  public static LEN: number = 8;
+  public static LEN: number;
   public static arr: LinkedList<Student>[];
 
   public constructor(editedLength: number) {
