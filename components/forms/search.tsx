@@ -4,6 +4,8 @@ import { useState } from "react";
 import { HashTable } from "../../classes/HashTables";
 import styles from "../../styles/Home.module.css";
 import { animations } from "../../animations/index";
+import { color } from "../../lib/visualColor";
+
 interface SearchFormProps {
     ht: HashTable;
     toast: (msg: {}) => void;
@@ -41,7 +43,7 @@ export default function SearchForm( props :SearchFormProps) {
       exit="exit"
       variants={animations.search}
     >
-      <Text className={styles.description} color="green.200">
+      <Text className={styles.description} color={color.search}>
         Search for a student in the HashTable:
       </Text>
       <form onSubmit={handleSearch}>

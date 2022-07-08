@@ -1,17 +1,25 @@
 import styles from "../styles/Home.module.css";
 import { Text } from "@chakra-ui/react";
 import { HashTable } from "../classes/HashTables";
-
+import {color} from "../lib/visualColor";
 interface VisualizeMapProps {
     ht: HashTable;
+    renderForm: string
 }
 const VisualizeMap = ((props: VisualizeMapProps) => {
-    const { ht } = props;
+    const { ht, renderForm } = props;
+    const visColor = renderForm === "insert" ? color.insert
+        : renderForm === "delete" ? color.delete
+            : renderForm === "search" ? color.search
+            : renderForm === "increment" ? color.increment
+            : renderForm === "reset" ? color.reset
+            : color.default;
     const map = ht.toString();
+    console.log(visColor);
   return (
     <div className={styles.description}>
       {map.map((line, index) => (
-        <Text key={index}>
+        <Text key={index} color={visColor}>
           {line.replace(",", " -> ").replace("[]", "[ ]")}
         </Text>
       ))}

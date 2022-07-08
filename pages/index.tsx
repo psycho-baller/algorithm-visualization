@@ -3,13 +3,10 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import DarkMode from "../components/DarkMode";
 import {
-  Text,
   Flex,
   Box,
   Spacer,
-  Input,
   Button,
-  Grid,
   Wrap,
   Popover,
   PopoverContent,
@@ -22,8 +19,7 @@ import {
 } from "@chakra-ui/react";
 import { HashTable } from "../classes/HashTables";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { animations } from "../animations/index";
+import { AnimatePresence } from "framer-motion";
 import MySlider from "../components/slider";
 import VisualizeMap from "../components/visualization";
 import InsertForm from "../components/forms/insert";
@@ -44,6 +40,7 @@ const Home: NextPage = () => {
   const [tableLen, setTableLen] = useState(8);
 
   function handleReset() {
+    setRenderForm("reset");
     const updated: boolean = map.join().length !== tableLen * 7 - 1; // 55 is the length of the hash table in string form, if the length is not 55, then the map is not empty hence the map is updated
     ht.reset();
     setMap(ht.toString());
@@ -139,7 +136,7 @@ const Home: NextPage = () => {
       </Flex>
       <main className={styles.main}>
         {/* <h1 className={styles.title}>HashTable implementation</h1> */}
-        <VisualizeMap ht={ht} />
+        <VisualizeMap ht={ht} renderForm={renderForm}/>
 
         <Wrap direction="row" spacing={4} className="grid">
           <Button

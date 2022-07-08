@@ -4,6 +4,7 @@ import { useState } from "react";
 import { HashTable } from "../../classes/HashTables";
 import styles from "../../styles/Home.module.css";
 import { animations } from "../../animations/index";
+import { color } from "../../lib/visualColor";
 
 interface DeleteFormProps {
     ht: HashTable;
@@ -47,7 +48,7 @@ export default function DeleteForm(
       variants={animations.delete}
     >
       {" "}
-      <Text className={styles.description} color="blue.200">
+      <Text className={styles.description} color={color.delete}>
         Delete a student from the HashTable:
       </Text>
       <form onSubmit={handleDelete}>

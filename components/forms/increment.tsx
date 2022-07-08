@@ -4,6 +4,8 @@ import { useState } from "react";
 import { HashTable } from "../../classes/HashTables";
 import styles from "../../styles/Home.module.css";
 import { animations } from "../../animations/index";
+import { color } from "../../lib/visualColor";
+
 
 interface IncrementFormProps {
   ht: HashTable;
@@ -47,7 +49,7 @@ export default function IncrementForm(
       exit="exit"
       variants={animations.increment}
     >
-      <Text className={styles.description} color="yellow.200">
+      <Text className={styles.description} color={color.increment}>
         Increment a student&apos;s age in the HashTable:
       </Text>
       <form onSubmit={handleIncrement}>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { HashTable } from "../../classes/HashTables";
 import styles from "../../styles/Home.module.css";
 import { animations } from "../../animations/index";
+import { color } from "../../lib/visualColor";
 
 interface InsertFormProps {
   ht: HashTable;
@@ -57,7 +58,7 @@ export default function InsertForm(props: InsertFormProps) {
       exit="exit"
       variants={animations.insert}
     >
-      <Text className={styles.description} color="red.200">
+      <Text className={styles.description} color={color.insert}>
         Insert a new key-value pair into the HashTable:
       </Text>
       <form onSubmit={handleInsert}>
