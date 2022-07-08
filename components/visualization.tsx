@@ -15,7 +15,6 @@ const VisualizeMap = ((props: VisualizeMapProps) => {
             : renderForm === "reset" ? color.reset
             : color.default;
     const map = ht.toString();
-    console.log(visColor);
   return (
     <div className={styles.description}>
       {map.map((line, index) => (
