@@ -138,7 +138,7 @@ const Home: NextPage = () => {
         {/* <h1 className={styles.title}>HashTable implementation</h1> */}
         <VisualizeMap ht={ht} renderForm={renderForm}/>
 
-        <Wrap direction="row" spacing={4} className="grid">
+        <Wrap direction="row" spacing={4} className="grid" justify="center">
           <Button
             // className={`mx-auto mt-4`}
             colorScheme="pink"
