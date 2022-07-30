@@ -2,6 +2,9 @@ import styles from "../styles/Home.module.css";
 import { Text } from "@chakra-ui/react";
 import { HashTable } from "../classes/HashTables";
 import {color} from "../lib/visualColor";
+
+// https://stackoverflow.com/questions/64884309/how-to-create-circle-square-shapes-using-react-with-text-inside-them-without-usi
+
 interface VisualizeMapProps {
     ht: HashTable;
     renderForm: string

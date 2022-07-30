@@ -27,11 +27,11 @@ import SearchForm from "../components/forms/search";
 import DeleteForm from "../components/forms/delete";
 import IncrementForm from "../components/forms/increment";
 
+
 const ht = new HashTable(8) as HashTable;
 const Home: NextPage = () => {
   const toast = useToast();
   const [renderForm, setRenderForm] = useState("insert");
-  // const [ht, setHt] = useState(new HashTable(8));
 
   const [map, setMap] = useState(ht.toString()) as [
     string[],
