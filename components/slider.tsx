@@ -14,15 +14,17 @@ import {
   PopoverContent,
   PopoverHeader,
 } from "@chakra-ui/react";
+import {   SettingsIcon } from '@chakra-ui/icons';
 import { HashTable } from "../classes/HashTables";
 
+interface NavbarProps {
+  setMap: (value: string[]) => void;
+  setTableLen: (value: number) => void;
+  tableLen: number;
+  ht: HashTable;
+}
 
-import {   SettingsIcon } from '@chakra-ui/icons';
-
-import { useState } from "react";
-
-//@ts-ignore
-export default function MySlider({setMap, tableLen, setTableLen, ht}) {
+export default function MySlider({setMap, tableLen, setTableLen, ht}: NavbarProps) {
     // let ht = new HashTable(8) as HashTable;
 
   function handleLenChange(value: number) {
@@ -47,7 +49,7 @@ export default function MySlider({setMap, tableLen, setTableLen, ht}) {
       <PopoverContent>
         <PopoverArrow />
         <PopoverCloseButton />
-        <PopoverHeader>Change HashTable Length</PopoverHeader>
+        <PopoverHeader>Change HashMap Length</PopoverHeader>
         <PopoverBody>
           <Box pt={6} pb={2}>
             <Slider

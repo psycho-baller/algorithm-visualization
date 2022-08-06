@@ -26,6 +26,7 @@ import InsertForm from "../components/forms/insert";
 import SearchForm from "../components/forms/search";
 import DeleteForm from "../components/forms/delete";
 import IncrementForm from "../components/forms/increment";
+import { Navbar } from "../components/navbar";
 
 
 const ht = new HashTable(8) as HashTable;
@@ -73,70 +74,15 @@ const Home: NextPage = () => {
           href="https://cdn3.iconfinder.com/data/icons/elastic-search-blackfill/128/Elastic_Search_-_Black_Fill-16-1024.png"
         />
       </Head>
-      <Flex>
-        <Box p="4">
-          <Popover>
-            <PopoverTrigger>
-              <Button>About</Button>
-            </PopoverTrigger>
-            <PopoverContent>
-              <PopoverArrow />
-              <PopoverCloseButton />
-              <PopoverHeader>
-                A simple HashTable implementation to store student&apos;s names
-                and ages
-              </PopoverHeader>
-              <PopoverBody>
-                This web app was made to visualize my solutions for the third
-                Assignment in the Data Structures and Algorithms course in
-                University of Calgary (CPSC 331) You can find the github
-                repository for this website{" "}
-                <a
-                  className={`text-lime-300 hover:text-orange-300`}
-                  href="https://github.com/psycho-baller/algorithm-visualization"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  here
-                </a>{" "}
-                and the hashTable implementation{" "}
-                <a
-                  className={`text-lime-300 hover:text-orange-300`}
-                  href="https://github.com/psycho-baller/algorithm-visualization/blob/main/classes/HashTables.ts"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  here
-                </a>{" "}
-                and the hashTable implementation in java (Assignment submission){" "}
-                <a
-                  className={`text-lime-300 hover:text-orange-300`}
-                  href="https://github.com/psycho-baller/storing-in-hashTables"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  here
-                </a>
-              </PopoverBody>
-            </PopoverContent>
-          </Popover>
-        </Box>
-        <Spacer />
-        <Box p="4">
-          <DarkMode />
-
-          <MySlider
-            setMap={setMap}
-            tableLen={tableLen}
-            setTableLen={setTableLen}
-            // setHt={setHt}
-            ht={ht}
-          />
-        </Box>
-      </Flex>
+      <Navbar
+        setMap={setMap}
+        tableLen={tableLen}
+        setTableLen={setTableLen}
+        ht={ht}
+      />
       <main className={styles.main}>
         {/* <h1 className={styles.title}>HashTable implementation</h1> */}
-        <VisualizeMap ht={ht} renderForm={renderForm}/>
+        <VisualizeMap ht={ht} renderForm={renderForm} />
 
         <Wrap direction="row" spacing={4} className="grid" justify="center">
           <Button
