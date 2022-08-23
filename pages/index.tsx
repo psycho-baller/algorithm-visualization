@@ -1,32 +1,21 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import DarkMode from "../components/DarkMode";
 import {
-  Flex,
-  Box,
-  Spacer,
   Button,
   Wrap,
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-  PopoverArrow,
-  PopoverCloseButton,
-  PopoverHeader,
-  PopoverBody,
   useToast,
 } from "@chakra-ui/react";
 import { HashTable } from "../classes/HashTables";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import MySlider from "../components/slider";
 import VisualizeMap from "../components/visualization";
 import InsertForm from "../components/forms/insert";
 import SearchForm from "../components/forms/search";
 import DeleteForm from "../components/forms/delete";
 import IncrementForm from "../components/forms/increment";
 import { Navbar } from "../components/navbar";
+import Footer from "../components/footer";
 
 
 const ht = new HashTable(8) as HashTable;
@@ -133,6 +122,7 @@ const Home: NextPage = () => {
           ) : null}
         </AnimatePresence>
       </main>
+      <Footer/>
     </div>
   );
 };

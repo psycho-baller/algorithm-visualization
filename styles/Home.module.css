@@ -1,5 +1,9 @@
 .container {
   padding: 0 2rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  margin: 0;
 }
 
 .main {
@@ -10,22 +14,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2rem;
 }
 
 .footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  /* width: 100%; */
+  padding: 1rem;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: smaller;
 }
 
+
 .footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
 }
 
 .title a {
