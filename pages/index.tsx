@@ -67,8 +67,9 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>HashTable Implementation</title>
-        <meta name="description" content="" />
+        <title>HashMap Visualization</title>
+
+        <meta name="description" content="Visualizes a HashMap and how it gets populated and modified with the user's full control of the Hashmap" />
         <link
           rel="icon"
           href="https://cdn3.iconfinder.com/data/icons/elastic-search-blackfill/128/Elastic_Search_-_Black_Fill-16-1024.png"
