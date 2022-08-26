@@ -26,18 +26,11 @@ const VisualizeMap = ((props: VisualizeMapProps) => {
             : renderForm === "reset" ? color.reset
             : color.default;
     const map = ht.toString();
-    console.log(map);
     const borderColor = useColorModeValue("#f0e7db", "#202023");
 
   return (
     <div className={styles.description}>
-      {/* <Circle
-        color="#000000"
-        size="80px"
-        border="1px solid #a5b4fc"
-        borderRadius="500%"
-      ></Circle> */}
-      <HStack m={0} justify="" align="end">
+      <HStack m={0} align="end">
         {/* maps through the hashmap and stacks them horizontally */}
         {map.map((line, index) => (
           <VStack key={index} padding={1} m={0}>
