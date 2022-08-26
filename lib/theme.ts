@@ -38,6 +38,7 @@ const fonts = {
 
 const colors = {
   grassTeal: "#88ccca",
+  orange: mode("#e6e6e6", "#202023")({ theme: {} }),
 };
 
 const config = {

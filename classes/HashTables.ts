@@ -144,7 +144,7 @@ export class HashTable {
     //  for Student, which has already been implemented.
     let sb: string[] = [];
     for (let i: number = 0; i < HashTable.arr.length; i++) {
-      sb.push(i + (": [" + (HashTable.arr[i].toString() + "]" + "\n")));
+      sb.push(HashTable.arr[i].toString());
     }
     return sb;
   }
