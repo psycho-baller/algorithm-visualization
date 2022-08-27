@@ -41,7 +41,7 @@ const VisualizeMap = ((props: VisualizeMapProps) => {
                   ? line // creates a list for each node in the line then maps through it and creates a square pair for each node
                       .split(",")
                       .map((node, index) => (
-                        <VStack m={0}>
+                        <VStack key={index} m={0}>
                           <Square key={index} border={`1px solid ${visColor}`}>
                             <Square
                               borderRight={`1px solid ${borderColor}`}
