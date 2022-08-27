@@ -1,4 +1,4 @@
-import { Flex, Box, Popover, PopoverTrigger, Button, PopoverContent, PopoverArrow, PopoverCloseButton, PopoverHeader, PopoverBody, Spacer} from "@chakra-ui/react";
+import { Flex, Box, Popover, PopoverTrigger, Button, PopoverContent, PopoverArrow, PopoverCloseButton, PopoverHeader, PopoverBody, Spacer, HStack} from "@chakra-ui/react";
 import MySlider from "./slider";
 import DarkMode from "./DarkMode";
 import { HashTable } from "../classes/HashTables";
@@ -61,7 +61,7 @@ export const Navbar = ({ setMap, tableLen, setTableLen, ht }: NavbarProps) => {
         </Popover>
       </Box>
       <Spacer />
-      <Box p="4">
+      <HStack p="4">
         <DarkMode />
 
         <MySlider
@@ -71,7 +71,7 @@ export const Navbar = ({ setMap, tableLen, setTableLen, ht }: NavbarProps) => {
           // setHt={setHt}
           ht={ht}
         />
-      </Box>
+      </HStack>
     </Flex>
   );
 };

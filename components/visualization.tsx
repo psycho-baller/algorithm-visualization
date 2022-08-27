@@ -30,10 +30,10 @@ const VisualizeMap = ((props: VisualizeMapProps) => {
 
   return (
     <div className={styles.description}>
-      <HStack m={0} align="end">
+      <HStack align="end">
         {/* maps through the hashmap and stacks them horizontally */}
         {map.map((line, index) => (
-          <VStack key={index} padding={1} m={0}>
+          <VStack key={index} px={1.5}>
             <VStack m={0}>
               {
                 // maps through the line and stacks them vertically
@@ -41,11 +41,13 @@ const VisualizeMap = ((props: VisualizeMapProps) => {
                   ? line // creates a list for each node in the line then maps through it and creates a square pair for each node
                       .split(",")
                       .map((node, index) => (
-                        <VStack key={index} m={0}>
-                          <Square key={index} border={`1px solid ${visColor}`}>
+                        <VStack key={index} m={1}>
+                          <Square
+                            bg={visColor}
+                            border={`1px solid ${visColor}`}
+                          >
                             <Square
                               borderRight={`1px solid ${borderColor}`}
-                              key={index}
                               // size="20px"
                               bg={visColor}
                               px={1}
@@ -55,7 +57,6 @@ const VisualizeMap = ((props: VisualizeMapProps) => {
                             <Square
                               px={1}
                               borderLeft={`1px solid ${borderColor}`}
-                              key={index}
                               // size="20px"
                               bg={visColor}
                             >

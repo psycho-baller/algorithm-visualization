@@ -26,7 +26,7 @@ export default function IncrementForm(
       toast({
         description: "Student not found in the HashTable",
         status: "error",
-        duration: 4000,
+        duration: 2000,
         isClosable: true,
         position: "top-right",
       });
@@ -35,7 +35,7 @@ export default function IncrementForm(
         title: "Student found in the HashTable",
         description: `${incrementName}'s age is now ${age}`,
         status: "success",
-        duration: 5000,
+        duration: 2000,
         isClosable: true,
         position: "top-right",
       });

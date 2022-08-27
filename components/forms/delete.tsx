@@ -25,7 +25,7 @@ export default function DeleteForm(
       toast({
         description: `${deleteName} was not found in the HashTable`,
         status: "error",
-        duration: 4000,
+        duration: 2000,
         isClosable: true,
         position: "top-right",
       });
@@ -33,7 +33,7 @@ export default function DeleteForm(
       toast({
         description: `${deleteName} was deleted from the HashTable`,
         status: "success",
-        duration: 4000,
+        duration: 2000,
         isClosable: true,
         position: "top-right",
       });

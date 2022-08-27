@@ -26,7 +26,7 @@ export default function InsertForm(props: InsertFormProps) {
         title: `Student's age was modified`,
         description: desc,
         status: "success",
-        duration: 5000,
+        duration: 2000,
         isClosable: true,
         position: "top-right",
       });
@@ -35,7 +35,7 @@ export default function InsertForm(props: InsertFormProps) {
         title: `Student was inserted`,
         description: desc,
         status: "success",
-        duration: 5000,
+        duration: 2000,
         isClosable: true,
         position: "top-right",
       });
@@ -44,7 +44,7 @@ export default function InsertForm(props: InsertFormProps) {
         title: `${insertName} was not inserted`,
         description: "Something went wrong",
         status: "error",
-        duration: 5000,
+        duration: 2000,
         isClosable: true,
         position: "top-right",
       });

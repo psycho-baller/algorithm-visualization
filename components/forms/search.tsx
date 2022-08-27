@@ -20,7 +20,7 @@ export default function SearchForm( props :SearchFormProps) {
       toast({
         description: "Student not found in the HashTable",
         status: "error",
-        duration: 4000,
+        duration: 2000,
         isClosable: true,
         position: "top-right",
       });
@@ -29,7 +29,7 @@ export default function SearchForm( props :SearchFormProps) {
         title: "Student found in the HashTable",
         description: `${searchName}'s age is ${age}`,
         status: "success",
-        duration: 5000,
+        duration: 2000,
         isClosable: true,
         position: "top-right",
       });
