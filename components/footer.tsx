@@ -15,17 +15,17 @@ export default function Footer(props: { renderForm: string}) {
             : renderForm === "increment" ? color.increment
             : renderForm === "reset" ? color.reset
             : color.default;
-  console.log(`text-[${visColor}]`);
+  // console.log(`text-[${visColor}]`);
   
   return (
-      <section className="flex fixed bottom-0 flex-col w-full">
-      <p className="text-right pb-4 mr-10">
+      <section className="bottom-0">
+      <p className="text-right pb-4 mr-8">
         Made with ❤️ by{" "}
         <a
           href="https://rami-maalouf.vercel.app/"
           target={"_blank"}
           rel={"noopener noreferrer"}
-          className={`text-[${visColor}]`}
+          className={`text-[${visColor}] text-lime-300 hover:text-orange-300`}
         >
           Rami
         </a>
