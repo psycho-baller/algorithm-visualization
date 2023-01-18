@@ -4,5 +4,5 @@ export const color = {
   search: "#68D391",
   increment: "#F6E05E",
   reset: "#FC8181",
-  default: "white",
+  default: "#CBD5E0",
 };

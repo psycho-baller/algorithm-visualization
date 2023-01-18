@@ -113,7 +113,7 @@ const Home: NextPage = () => {
           ) : null}
         </AnimatePresence>
       </main>
-      <Footer/>
+      <Footer renderForm={renderForm} />
     </div>
   );
 };
