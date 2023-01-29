@@ -117,3 +117,7 @@
     flex-direction: column;
   }
 }
+
+.red-on-hover:hover {
+  color: red;
+}
